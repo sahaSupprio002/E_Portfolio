@@ -1,0 +1,274 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color:  #020145e4;
+}
+
+section {
+  min-height: 90vh;
+  display: flex;
+  color: #ffffff;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #33b194;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.138); 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  color: #ffffff;
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#randomText {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  height: 30px;
+  font-size: 30px;
+  color: #7af4d7;
+  margin-bottom: 20px;
+}
+
+.logo:hover {
+  color: #64ffda;
+}
+
+/* Navigation */
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #ccd6f6;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #64ffda;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+}
+
+#bio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;;
+  gap: 2rem;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+
+  
+}
+
+#bio::before {
+  content: "";
+  background: url('assets/IMG_5802.png') no-repeat left bottom;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  bottom: 5%;
+  width: 700px;
+  height: 700px;
+  z-index: -1;
+  opacity: 1; /* optional: make it semi-transparent */
+}
+
+#finisher_header {
+  width: 100%; 
+  height: 105%;
+  z-index: -2;
+}
+
+#bio_col {
+  width: 40vw;
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: #04224a9c;
+  margin-right: 10%;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+#bio_col p {
+  font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+  #bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #bio_img {
+    max-width: 90vw;
+    height: auto;
+  }
+
+  #bio_col {
+    height: 100%;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
+
+
+
+#bio_btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-left: 35px;
+}
+
+#bio_btns button {
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: none;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.4) 0 8px 20px -5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 3px 5px;
+  min-width: 120px;
+  font-size: 1rem;;
+  user-select: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+#bio_btns button span {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+#bio_btns button:hover span {
+  background: none;
+  color: #ffffff; /* optional hover text color */
+}
+
+#bio_btns button:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+
+
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  height: 70px;
+  width: 360px;
+  border-radius: 12px;
+  padding: 0 10px;
+}
+
+.card a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.25s;
+  background-color: #444;
+}
+
+.card svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.25s ease;
+}
+
+.card a:hover svg {
+  animation: bounce_613 0.4s linear;
+}
+
+/* Hover Colors */
+.social-link.facebook:hover { background-color: #1877F2; }
+.social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.social-link.discord:hover { background-color: #5865f2; }
+.social-link.linkedin:hover { background-color: #0077b5; }
+.social-link.github:hover { background-color: #333; }
+
+@keyframes bounce_613 {
+  40% { transform: scale(1.4); }
+  60% { transform: scale(0.8); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+
+
+
+
+
+
+
+/* 2nd section*/
+#projects {
+  background-color: #000000e6;
+}
