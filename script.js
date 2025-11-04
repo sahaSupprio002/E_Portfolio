@@ -9,6 +9,27 @@ const navLinks = document.querySelectorAll('nav a');
     });
   });
 
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120; // adjust for header height
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
 
 
 // random text typing effect
@@ -51,36 +72,4 @@ const textElement = document.getElementById("randomText");
 
 
 
-// fixed Scroll
-// let scrollTimeout;
-//   const scrollSections = document.querySelectorAll("section");
-//   let currentSection = 0;
-
-//   // Disable browser auto scroll
-//   if ("scrollRestoration" in history) {
-//     history.scrollRestoration = "manual";
-//   }
-
-//   window.onload = function () {
-//     currentSection = 0;
-//     scrollSections[currentSection].scrollIntoView({ behavior: "auto" });
-//   };
-
-//   window.addEventListener("wheel", function (e) {
-//     e.preventDefault();
-
-//     if (scrollTimeout) return;
-
-//     if (e.deltaY > 0) {
-//       currentSection = Math.min(currentSection + 1, scrollSections.length - 1);
-//     } else {
-//       currentSection = Math.max(currentSection - 1, 0);
-//     }
-
-//     scrollSections[currentSection].scrollIntoView({ behavior: "smooth" });
-
-//     scrollTimeout = setTimeout(() => {
-//       scrollTimeout = null;
-//     }, 1000);
-//   }, { passive: false });
 
