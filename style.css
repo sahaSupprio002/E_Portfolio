@@ -28,14 +28,15 @@ nav a.active {
 .header {
   position: fixed;
   top: 0;
+  height: 8%;
   width: 100%;
   padding: 20px 40px;
-  background-color: rgba(0, 0, 0, 0.138); 
+  background-color: rgba(0, 0, 0, 0.592); 
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.393);
 }
 
 /* Logo */
@@ -92,6 +93,63 @@ nav a:hover {
   }
 }
 
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button (SVG) */
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.dropbtn :hover {
+    color: #64ffda;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* align to the right of the button */
+    background-color: #1111117b;
+    min-width: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #007bff6c;
+}
+
+/* Show dropdown on click (JavaScript) */
+.dropdown.show .dropdown-content {
+    display: flex;
+}
+
+
+
 #bio {
   display: flex;
   flex-direction: row;
@@ -99,24 +157,28 @@ nav a:hover {
   justify-content: space-between;;
   gap: 2rem;
   flex-wrap: wrap; 
+  height: 100vh;
 }
 
 #bio::before {
   content: "";
   background: url("assets/IMG_5802.png") no-repeat left bottom;
-  background-size: contain;
-  position: absolute;
-  bottom: 10vh;
-  width: 60vw;
-  height: 80vh;
+  background-size: cover;
+  position: fixed;
+  top: 5vh;
+  bottom: 0;
+  left: 0;
+  width: 50vw; /* full screen width */
+  height: 100vh; /* full screen height */
   z-index: -1;
   pointer-events: none;
+  opacity: 0.9;
 }
 
 
 #finisher_header {
   width: 100%; 
-  height: 105%;
+  height: 125%;
   z-index: -2;
 }
 
@@ -128,6 +190,7 @@ nav a:hover {
   margin-right: 10%;
   border-radius: 12px;
   padding: 30px;
+  margin-top: 13vh;
 
   /* Animation */
   opacity: 0;
@@ -305,7 +368,7 @@ nav a:hover {
     padding-top: 10vh;
     padding-right: 5vh;
     background-color: #000000;
-    border-radius: 15px;
+    border-top-right-radius: 15px;
     border-width: 20px;
     border: #007bff;
 }
@@ -409,25 +472,23 @@ nav a:hover {
   display: flex;
   flex-direction: column; /* stack vertically */
   align-items: flex-start;
-  width: 70%;
+  width: 45%;
   max-width: 1000px; /* prevent overly wide layouts on big screens */
   margin: 0 auto; /* center the section */
-  padding: 5vh 3vw; /* responsive spacing */
 }
 
 /* === ABOUT SECTION === */
 .expertise-about-container {
   width: 100%; /* full width for stacking */
-  padding: 5vh 3vw; /* responsive padding */
+  padding: 5vh 4vw; /* responsive padding */
 }
 
 .expertise-about-container h1 {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.3rem);
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 .expertise-about {
-  padding-left: 2vw;
   position: relative;
 }
 
@@ -439,16 +500,64 @@ nav a:hover {
   color: #c9d6ff;
 }
 
+.skill-btn {
+  background-color: transparent;
+  color: white;
+  width: 38vh;
+  border: 2px solid transparent;
+  padding: 10px 15px;
+  border-bottom: 5px solid #5a42f36b;;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1vw + 0.4rem, 1rem);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: #5a42f3;
+  border-radius: 7px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.skill-btn:hover::before,
+.skill-btn.active::before {
+  opacity: 1;
+}
+
+.skill-btn.active {
+  color: white;
+}
+
+.expertise-section,
+.certifications-section {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.4s ease;
+  margin-top: 20px;
+}
+
+.expertise-section.show,
+.certifications-section.show {
+  display: block;
+  opacity: 1;
+}
+
+
 /* === EXPERTISE SECTION === */
 .expertise-container {
   width: 100%;
-  padding: 3vh 3vw;
+  height: 55vh;
+  padding-left: 4vw;
+  padding-bottom: 2vh;
 }
 
-.expertise-container h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 2.3rem);
-  margin-bottom: 2vh;
-}
 
 .expertise-box {
   margin-bottom: 18px;
@@ -459,7 +568,7 @@ nav a:hover {
 /* Headers */
 .expertise-box h3 {
   margin: 0;
-  font-size: clamp(1.4rem, 1.5vw + 1rem, 1.9rem);
+  font-size: clamp(1.4rem, 1.5vw + 1rem, 1.5rem);
   font-weight: 700;
   color: #fff;
 }
@@ -489,40 +598,190 @@ nav a:hover {
 
 
 #projects {
-  background-color: #00000067;
+  background-color: #000000;
   flex-direction: column;
   justify-content: center;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4vh;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: 2px solid #5a42f3;
+  color: #fff;
+  padding: 10px 20px;
+  width: 62vh;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #5a42f3;
+}
+
+.tab-btn.active {
+  background-color: #5a42f3;
+}
+
+
+#projects h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-top: 5vh;
+  margin-left:10vh;
+}
+
+#projects h3 {
+  color: #ffffff;
+  font-size: 2rem;
 }
 
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 30px;
     padding: 5vh;
 }
 
+.work-item + .work-item {
+    margin-top: 4vh; /* 4vh space between consecutive items */
+}
+
 .work-item {
-    display: flex;
-    align-items: center;
-    gap: 2vh;
-    padding: 2vh;
-    border-radius: 10px;
-    background-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+  padding: 5vh;
+  border-radius: 10px;
+  background: rgb(36, 43, 57);
+  transition: 0.4s ease;
+  z-index: 0;
 }
 
-.work-item p{
+/* create gradient border effect */
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px; /* thickness of the border */
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0; 
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* hover glow */
+.work-item:hover::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 12px #5a42f3);
+}
+
+.work-item p {
   text-align: justify;
-  width: 50%;
+  color: #c9d6ff;
+  margin: 0;
+  line-height: 1.5;
 }
 
-.work-pic image{
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-    object-fit: cover;
+.work-pic img {
+  width: 100vh;      /* adjust size */
+  height: 15%;     /* maintain square shape */
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;    /* prevent shrinking */
+  transition: transform 1.1s ease-in-out;
 }
+.work-item:hover .work-pic img {
+  transform: scale(1.02); /* grow 15% */
+}
+
+
+
+
 
 #contact {
   background-color: #000000;
+  height: auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 5vh;
+}
+
+.contact-form h1{
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 2vh;
+}
+
+#name, #email{
+  width: 40%;
+  gap: 2%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#subject{
+  width: 80.5%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#message{
+  width: 80.5%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#sub-btn{
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5a42f3;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#sub-btn:hover {
+  background-color: #7a63f5;
+}
+
+.contact-info {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 5vh;
+  ;
+}
+
+.contact-info h1{
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 2vh;
 }

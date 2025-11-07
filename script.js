@@ -32,6 +32,23 @@ window.addEventListener("scroll", () => {
 });
 
 
+
+const dropBtn = document.querySelector('.dropbtn');
+  const dropdown = document.querySelector('.dropdown');
+
+  dropBtn.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+  });
+
+  // Close dropdown if clicked outside
+  window.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+
+
+
 // random text typing effect
 const texts = [
       "Hello, World!",
@@ -72,4 +89,58 @@ const textElement = document.getElementById("randomText");
 
 
 
+const buttons_skill = document.querySelectorAll(".skill-btn");
+const sections_cer = document.querySelectorAll(".expertise-section, .certifications-section");
+
+// Make "Skills" active by default
+document.getElementById("btn1").classList.add("active");
+document.getElementById("skills").classList.add("show");
+
+buttons_skill.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Remove active class from all buttons
+    buttons_skill.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Hide all sections
+    sections_cer.forEach(sec => {
+      sec.classList.remove("show");
+    });
+
+    // Show the selected section
+    const target = document.getElementById(btn.dataset.tab);
+    target.classList.add("show");
+  });
+});
+
+
+
+
+
+const buttons = document.querySelectorAll(".tab-btn");
+  const categories = document.querySelectorAll(".project-category");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Update button active state
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Hide all project categories
+      categories.forEach(cat => cat.style.display = "none");
+
+      // Show selected one
+      const target = document.getElementById(btn.dataset.tab);
+      target.style.display = "block";
+
+      // Optional: smooth fade animation
+      target.style.opacity = 0;
+      setTimeout(() => {
+        target.style.transition = "opacity 0.6s ease";
+        target.style.opacity = 1;
+      }, 50);
+    });
+  });
+
+  
 
