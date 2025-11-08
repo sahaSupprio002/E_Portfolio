@@ -22,7 +22,7 @@ section {
 
 nav a.active {
   font-weight: bold;
-  color: #33b194;
+  color: #30e1b7;
 }
 
 .header {
@@ -52,7 +52,7 @@ nav a.active {
   font-family: Comic Sans MS, Comic Sans, cursive;
   height: 30px;
   font-size: 30px;
-  color: #7af4d7;
+  color: #78f3d6;
   margin-bottom: 20px;
 }
 
@@ -112,7 +112,7 @@ nav a:hover {
     transition: 0.5s;
 }
 
-.dropbtn :hover {
+.dropbtn:hover {
     color: #64ffda;
 }
 
@@ -121,7 +121,7 @@ nav a:hover {
     display: none;
     position: absolute;
     right: 0; /* align to the right of the button */
-    background-color: #1111117b;
+    background-color: #111111a4;
     min-width: 150px;
     border-radius: 6px;
     overflow: hidden;
@@ -134,13 +134,10 @@ nav a:hover {
 .dropdown-content a {
     color: #fff;
     padding: 10px 15px;
+    width: 150%;
     text-decoration: none;
     display: block;
     transition: background 0.3s;
-}
-
-.dropdown-content a:hover {
-    background-color: #007bff6c;
 }
 
 /* Show dropdown on click (JavaScript) */
@@ -689,6 +686,10 @@ nav a:hover {
   filter: drop-shadow(0 0 12px #5a42f3);
 }
 
+.work-item:hover {
+  background: linear-gradient(to bottom, #000000 0%, #5a42f385 100%);
+}
+
 .work-item p {
   text-align: justify;
   color: #c9d6ff;
@@ -714,48 +715,53 @@ nav a:hover {
 
 #contact {
   background-color: #000000;
-  height: auto;
+  height: 30hv;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   max-width: 50%;
-  margin: 0 auto;
+  margin-left: 5%;
   padding: 5vh;
 }
 
 .contact-form h1{
-  color: #ffffff;
-  font-size: 3rem;
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
   margin-bottom: 2vh;
 }
 
 #name, #email{
-  width: 40%;
+  width: 45%;
   gap: 2%;
   padding: 10px;
   margin-bottom: 15px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #e4e4e4;
 }
 #subject{
-  width: 80.5%;
+  width: 90.5%;
   padding: 10px;
   margin-bottom: 15px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #e4e4e4;
 }
 #message{
-  width: 80.5%;
+  width: 90.5%;
   height: 150px;
   padding: 10px;
   margin-bottom: 15px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #e4e4e4;
 }
 
 #sub-btn{
@@ -765,23 +771,77 @@ nav a:hover {
   border-radius: 5px;
   background-color: #5a42f3;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.7s ease;
 }
 #sub-btn:hover {
-  background-color: #7a63f5;
+  background-color: #7c68ff;
 }
+
 
 .contact-info {
-  max-width: 50%;
-  margin: 0 auto;
+  position: relative;
+  max-height: 70vh;
+  width: 50%;
   padding: 5vh;
-  ;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  border: none; /* remove normal border */
+  overflow: hidden; /* keeps glow clean inside */
 }
 
-.contact-info h1{
-  color: #ffffff;
-  font-size: 3rem;
-  margin-bottom: 2vh;
+.contact-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 3px; 
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0; 
+  transition: opacity 0.4s ease, filter 0.4s ease;
 }
+
+/* Glow on hover */
+.contact-info:hover::before {
+  opacity: 1;
+  filter: brightness(1.4);
+}
+
+
+.contact-info h1 {
+  font-size: 5rem;
+  margin-bottom: 15%;
+  color: #ffffff;
+  transition: color 0.7s ease;
+}
+
+.contact-info:hover h1 {
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  font-size: 2rem;
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+}
+
+
