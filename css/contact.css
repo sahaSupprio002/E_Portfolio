@@ -1,0 +1,130 @@
+#contact {
+  background-color: #000000;
+  height: 30hv;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin-left: 5%;
+  padding: 5vh;
+}
+
+.contact-form h1{
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
+  margin-bottom: 2vh;
+}
+
+#name, #email{
+  width: 45%;
+  gap: 2%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #e4e4e4;
+}
+#subject{
+  width: 90.5%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #e4e4e4;
+}
+#message{
+  width: 90.5%;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #e4e4e4;
+}
+
+#sub-btn{
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5a42f3;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.7s ease;
+}
+#sub-btn:hover {
+  background-color: #7c68ff;
+}
+
+
+.contact-info {
+  position: relative;
+  max-height: 70vh;
+  width: 50%;
+  padding: 5vh;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  border: none; /* remove normal border */
+  overflow: hidden; /* keeps glow clean inside */
+}
+
+.contact-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 3px; 
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0; 
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* Glow on hover */
+.contact-info:hover::before {
+  opacity: 1;
+  filter: brightness(1.4);
+}
+
+
+.contact-info h1 {
+  font-size: 5rem;
+  margin-bottom: 15%;
+  color: #ffffff;
+  transition: color 0.7s ease;
+}
+
+.contact-info:hover h1 {
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.2rem 0;
+  font-size: 2rem;
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+}

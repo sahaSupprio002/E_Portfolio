@@ -1,0 +1,117 @@
+
+nav a.active {
+  font-weight: bold;
+  color: #30e1b7;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 8%;
+  width: 100%;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.592); 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.393);
+}
+
+/* Logo */
+.logo {
+  color: #ffffff;
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #64ffda;
+}
+
+/* Navigation */
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #ccd6f6;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #64ffda;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button (SVG) */
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.dropbtn:hover {
+    color: #64ffda;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* align to the right of the button */
+    background-color: #111111a4;
+    min-width: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+    color: #fff;
+    padding: 10px 15px;
+    width: 150%;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+/* Show dropdown on click (JavaScript) */
+.dropdown.show .dropdown-content {
+    display: flex;
+}
