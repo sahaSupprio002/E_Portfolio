@@ -30,19 +30,19 @@ section {
   height: 100vh;
 }
 
-#bio::before {
+
+#bio_img::before {
   content: "";
-  background: url("assets/IMG_5802.png") no-repeat left bottom;
-  background-size: cover;
   position: fixed;
   top: 5vh;
-  bottom: 0;
   left: 0;
-  width: 50vw; /* full screen width */
-  height: 100vh; /* full screen height */
+  width: 50vw;
+  height: 100vh;
+  background: url("../assets/IMG_5802.png") no-repeat left bottom;
+  background-size: cover;
   z-index: -1;
-  pointer-events: none;
   opacity: 0.9;
+  pointer-events: none;
 }
 
 

@@ -10,79 +10,113 @@ html {
 
 
 body {
-    background-color: #121212; /* Dark background */
+    background-color: #202020; /* Dark background */
     color: #e0e0e0; /* Light text color */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
     padding: 20px;
 }
 
 h1{
     text-align: center;
-    margin-top: 5%;
+    margin-top: 4%;
     font-size: 5rem;
 }
 
-/* General card styling */
-.card {
-    width: 18rem;
-    background: #1a1a1a; /* Dark background for portfolio */
-    color: #ffffff; /* Text color */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px #2b1f7b;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin: 20px;
+
+
+
+
+
+/* Project list container */
+.project-list {
+  display: flex;
+  justify-content: center;
+  padding: 5vh 0;
 }
 
-/* Hover effect */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 30px #5a42f3;;
+/* Category container – 2-column grid */
+.project-category {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4vh;
+  width: 90%;
+  max-width: 1200px;
 }
 
-/* Image styling */
-.card-img-top {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-bottom: 3px solid #5a42f3; /* Accent color */
+/* Each project card */
+.work-item {
+  position: relative;
+  background: rgb(36, 43, 57);
+  border-radius: 12px;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: background 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
 }
 
-/* Card body */
-.card-body {
-    padding: 1rem 1.2rem;
+/* Gradient border effect */
+.work-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(144deg, #af40ff, #5a42f3 50%, #00dbeb);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, filter 0.4s ease;
 }
 
-.card-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #5a42f3; /* Accent color for title */
+/* Hover glow effect */
+.work-item:hover::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 12px #5a42f3);
 }
 
-.card-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #cccccc;
+.work-item:hover {
+  background: linear-gradient(to bottom, #000000 0%, #5a42f385 100%);
+  transform: translateY(-4px);
 }
 
-/* Links at the bottom */
-.card-link {
-    color: #5a42f3;
-    text-decoration: none;
-    margin-right: 1rem;
-    transition: color 0.3s;
+/* Heading styling */
+.work-item h3 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 2vh;
 }
 
-.card-link:hover {
-    color: #ff6f61; /* Hover accent */
-    text-decoration: underline;
+/* Image container */
+.work-pic {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-/* Optional responsive tweak */
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-    }
+.work-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 1s ease-in-out;
+}
+
+.work-item:hover .work-pic img {
+  transform: scale(1.05);
+}
+
+/* Responsive: single column on smaller screens */
+@media (max-width: 900px) {
+  .project-category {
+    grid-template-columns: 1fr;
+  }
 }

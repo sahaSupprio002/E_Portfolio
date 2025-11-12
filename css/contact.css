@@ -77,6 +77,7 @@
   color: #fff;
   border: none; /* remove normal border */
   overflow: hidden; /* keeps glow clean inside */
+  box-shadow: 20px 20px 30px #5a42f3;
 }
 
 .contact-info::before {
