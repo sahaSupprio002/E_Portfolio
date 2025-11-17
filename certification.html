@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html#home" class="logo">S. SAHA</a>
+
+        <nav>
+            <a href="index.html#bio">Home</a>
+            <a href="index.html#info">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="achivment.html">Achivments</a>
+                    <a href="Certification.html">Certifications</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="activities.html">Activities</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="">
+
+        <h1>Certifications</h1>
+
+        <div class="project-list">
+            
+            <div class="project-category" id="software">
+                
+                
+                <div class="work-item">
+                    <div>
+                        <h3>Supervised Machine Learning: Regression and Classification, DeepLearning.AI, Corsera</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/Supervised Machine Learning.png" alt="Supervised Machine Learning">
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <h3>IT Essentials: PC Hardware and Software, Cisco Networking Academy</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/IT_Essentials_certificate.png" alt="IT_Essentials_certificate">
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <h3>Cisco Networking Academy</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/ITEssentialsUpdate.png" alt="IT_Essentials_certificate">
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <h3>Higher Secondary Certificate</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/ssc.jpg" alt="IT_Essentials_certificate">
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <h3>Secondary School Certificate</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/ssc.jpg" alt="IT_Essentials_certificate">
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <h3>Junior School Certificate</h3>
+                    </div>
+                    <div class="work-pic">
+                        <img src="assets/jsc.jpg" alt="IT_Essentials_certificate">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    <script>
+        const dropBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        dropBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('show');
+            }
+        });
+    </script>
+
+
+</body>
+</html>

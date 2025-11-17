@@ -1,3 +1,5 @@
+
+
 /* 2nd section*/
 #row about-timelines {
   width: 100vh;
@@ -64,6 +66,16 @@
     margin-bottom: 35px;
     padding-left: 25px;
     transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.timeline__block img {
+    display: block;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+
 }
 
 /* Hover Animation */
@@ -234,4 +246,15 @@
   .expertise-wrapper {
     padding: 3vh 4vw;
   }
+}
+
+
+
+#video_cv{
+    background-color: #000000;
+}
+
+.video_cv {
+    margin-top: 40px;
+    margin-left: 18%;
 }

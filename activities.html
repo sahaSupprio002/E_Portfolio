@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html#home" class="logo">S. SAHA</a>
+
+        <nav>
+            <a href="index.html#bio">Home</a>
+            <a href="index.html#info">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="achivment.html">Achivments</a>
+                    <a href="Certification.html">Certifications</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="activities.html">Activities</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="">
+
+        <h1>Activities</h1>
+
+        <div class="column lg-6 tab-12">
+
+            <div class="timeline" data-animate-el>
+
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Researcher, AIUB Research and Development Club</h4>
+                        <h5 class="timeline__meta">American International University-Bangladesh, Dhaka</h5>
+                        <p class="timeline__timeframe">2025 - Present</p>
+                        <ul>
+                            <li>Conducting research on ML, Deep Learning, NLP and vision models.</li>
+                            <li>Collaborating with team members to facilitate workshops, seminars, and outreach events.</li>
+                        </ul>
+                        <!-- <img src="assets/OIP.jpg" alt="AIUB_RnD_Club_Logo"> -->
+                    </div>
+                </a>
+
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Fundraiser and Distributor, Alor Sporsho, Ullapara</h4>
+                        <p class="timeline__timeframe">2018 - 2021</p>
+                        <ul>
+                            <li>Raised funds and distributed food, clothes, and educational materials to underprivileged <br/>children and poor communities.</li>
+                        </ul>
+                    </div>
+                </a>
+
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Singer, Ullapara Shilpakala Academy, Ullapara</h4>
+                        <p class="timeline__timeframe">2012 - 2021</p>
+                        <ul>
+                            <li>Performed in cultural programs in local and regional events.</li>
+                            <li>Participated in stage performances organized by the academy.</li>
+                        </ul>
+                    </div>
+                </a>
+
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Singer and Guitarist, Spondhon, Ullapara</h4>
+                        <p class="timeline__timeframe">2018 - 2021</p>
+                        <ul>
+                            <li>Performed in social programs promoting cultural engagement.</li>
+                            <li>Represented the academy in Upazila and District events and competitions.</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <script>
+        const dropBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        dropBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('show');
+            }
+        });
+    </script>
+
+
+</body>
+</html>

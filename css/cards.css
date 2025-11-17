@@ -22,6 +22,12 @@ h1{
     font-size: 5rem;
 }
 
+h2{
+    text-align: center;
+    margin-top: 4%;
+    font-size: 2rem;
+}
+
 
 
 
@@ -97,12 +103,20 @@ h1{
 /* Image container */
 .work-pic {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 6 / 4;
   overflow: hidden;
   border-radius: 10px;
 }
 
 .work-pic img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 1s ease-in-out;
+}
+
+.work-pic iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;

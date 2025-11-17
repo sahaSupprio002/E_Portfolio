@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html#home" class="logo">S. SAHA</a>
+
+        <nav>
+            <a href="index.html#bio">Home</a>
+            <a href="index.html#info">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="achivment.html">Achivments</a>
+                    <a href="Certification.html">Certifications</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="activities.html">Activities</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="">
+
+        <h1>Publications</h1>
+
+
+        <div class="column lg-6 tab-12">
+
+            <div class="timeline" data-animate-el>
+
+                
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Transformer-based Framework for Multilevel Bias Identification in Bangladeshi News Media</h4>
+                        <h5 class="timeline__meta">Submitted to IEEE Access</h5>
+                        <p class="timeline__timeframe">Mohammad Tofiqul Islam, Hasan Mahmud Shanto, Supprio Saha Pranto, Dr. Md Saef Ullah Miah</p>
+                        <p class="timeline__timeframe">2025</p>
+                    </div>
+                </a>
+
+                <a href="#" class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">Quantifying the Impact of Injuries on Football Player Market Value Drop: A Machine Learning and Explainability Study</h4>
+                        <h5 class="timeline__meta">Submitted to IEEE 28th International Conference on Computer and Information Technology (ICCIT 2025)</h5>
+                        <p class="timeline__timeframe">Mohammad Tofiqul Islam, Hasan Mahmud Shanto, Supprio Saha Pranto, Tohedul Islam</p>
+                        <p class="timeline__timeframe">2018 - 2021</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+        <script>
+        const dropBtn = document.querySelector('.dropbtn');
+        const dropdown = document.querySelector('.dropdown');
+
+        dropBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('show');
+            }
+        });
+    </script>
+
+
+</body>
+</html>
