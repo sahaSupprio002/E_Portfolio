@@ -18,6 +18,10 @@ section {
   display: flex;
   color: #ffffff;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 #bio {
